@@ -1,0 +1,11 @@
+ version: '2'
+ services:
+
+  amazonlinux2.7:
+    # build: .
+    build:
+      context: ./
+      dockerfile: Dockerfile.amazonlinux2.7
+    volumes:
+       - .:/outputs
+    command: /bin/bash /outputs/build.sh
