@@ -11,11 +11,14 @@ RUN yum install -y \
     findutils \
     zip
 
-RUN yum install -y \
-    python27-devel \
-    python27-virtualenv \
+RUN yum -y install https://rhel6.iuscommunity.org/ius-release.rpm
+RUN yum -y install \
+    python36u \
+    python36u-pip \
+    python36u-devel \
+    python36u-setuptools
 
-ADD build.sh /outputs/build.sh
+ADD build3.6.sh /outputs/build.sh
 ADD requirements.sh /outputs/requirements.sh
 
 CMD /bin/bash /outputs/build.sh

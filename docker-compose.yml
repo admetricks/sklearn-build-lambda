@@ -9,3 +9,13 @@
     volumes:
        - .:/outputs
     command: /bin/bash /outputs/build.sh
+
+
+  amazonlinux3.6:
+    # build: .
+    build:
+      context: ./
+      dockerfile: Dockerfile.amazonlinux3.6
+    volumes:
+       - .:/outputs
+    command: /bin/bash /outputs/build.sh
